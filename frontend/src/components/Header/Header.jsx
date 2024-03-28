@@ -24,7 +24,12 @@ function Header() {
         </a>
         {userData.isLogged ? (
           <div>
-            <a className="main-nav-item" href="./sign-in">
+            <a
+              className="main-nav-item"
+              onClick={() => {
+                navigate("/user");
+              }}
+            >
               <i className="fa fa-user-circle"></i>
               {userData.userinfo[0].userName}
             </a>
