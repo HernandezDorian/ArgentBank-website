@@ -1,13 +1,20 @@
 // import { useState } from "react";
 import argentBankLogo from "./../../assets/img/argentBankLogo.webp";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
+  const navigate = useNavigate();
   const userData = useSelector((state) => state.user);
   return (
     <header id="header">
       <nav className="main-nav">
-        <a className="main-nav-logo" href="./">
+        <a
+          className="main-nav-logo"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
           <img
             className="main-nav-logo-image"
             src={argentBankLogo}
